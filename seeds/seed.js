@@ -23,7 +23,7 @@ const seedDatabase = async () => {
   for (const comment of commentDataSeed) {
     await Comment.create({
       ...comments,
-      comment_data: comments[Math.floor(Math.random() * comments.length)].id,
+      comment_text: comments[Math.floor(Math.random() * comments.length)].id,
     });
   }
 

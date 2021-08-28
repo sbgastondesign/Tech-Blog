@@ -6,12 +6,12 @@
   },
   {
     "name": "The Ultimate Tech Quiz",
-    "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "content": "A web app that will test your coding abilities.",
     "date_created": "8/20/21"
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "name": "Interview Time",
+    "description": "What it takes to get the job.",
     "date_created": "8/07/21"
   }
 ]
