@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
-const sequelize = require('../../config/connection');
+// const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -15,11 +15,11 @@ router.get('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 })
-  .then(postData => res.json(postData.reverse()))
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+// .then(postData => res.json(postData.reverse()))
+// .catch(err => {
+//   console.log(err);
+//   res.status(500).json(err);
+// });
 
 router.get('/', (req, res) => {
   console.log('======================');
