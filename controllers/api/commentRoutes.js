@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Comment.findAll({
-            where: {
-                id: req.params.id
-            }
-        })
+        where: {
+            id: req.params.id
+        }
+    })
         .then(commentData => res.json(commentData))
         .catch(err => {
             console.log(err);
@@ -26,10 +26,10 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({
-                comment_text: req.body.comment_text,
-                post_id: req.body.post_id,
-                user_id: req.session.user_id,
-            })
+            comment_text: req.body.comment_text,
+            post_id: req.body.post_id,
+            user_id: req.session.user_id,
+        })
             .then(commentData => res.json(commentData))
             .catch(err => {
                 console.log(err);

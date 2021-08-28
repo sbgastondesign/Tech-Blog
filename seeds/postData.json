@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Random regex",
+    "content": "Just some random post about regex.",
+    "date_created": "8/24/21"
+  },
+  {
+    "name": "The Ultimate Tech Quiz",
+    "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "date_created": "8/20/21"
+  },
+  {
+    "name": "Roll 'Em Up",
+    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "date_created": "8/07/21"
+  }
+]
