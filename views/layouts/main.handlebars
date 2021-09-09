@@ -4,41 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Nate's Tech Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+  <div class="wrapper">
+    <header>
       <h1>
-        {{!-- <span role="img" aria-label="money">💸</span> --}}
-        <a href="/">Tech Blog</a>
+        <a href="/">Nate's Tech Blog</a>
       </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="../profile.handlebars">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        {{#if loggedIn}}
+        <a href="/dashboard"><span class="glyphicon glyphicon-user"></span>{{ username }}'s Dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="../login.handlebars">login</a>
+        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+    <main>
       {{{ body }}}
     </main>
     <footer>
-      
+      Thanks for visiting!
     </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/public/js/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
