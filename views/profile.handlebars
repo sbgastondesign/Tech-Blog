@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-6">
+    <h3>Welcome, {{name}}!</h3>
+  </div>
+  <div class="col-4 text-end">
+    <button type="button" class="btn btn-post text-light" data-bs-toggle="modal" data-bs-target="#new-post">
+  Create A New Post
+    </button>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div id="new-post" class="col-md-6 modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create a New Post</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="form new-post-form">
+            <div class="form-group">
+              <label for="post-name form-label">Title:</label>
+              <input class="form-input form-control" type="text" id="post-name" name="post-name" />
+            </div>
+          
+            <div class="form-group mb-2">
+              <label for="post-desc form-label">Contents:</label>
+              <textarea class="form-input form-control" id="post-desc" name="post-desc"></textarea>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <div class="form-group text-end">
+                <button type="submit" id="btnNew" class="btn btn-post text-light">Create</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+ 
+   <h4>Current Posts</h4>
+  {{#if posts.length}}
+  <div class="col-md-10 post-list delete-list bg-light">
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="form border p-2">
+        <div class="col-md-8">
+          <textarea id="title-{{blog.id}}" class="form-control" style="height: 70px; resize:none; overflow: hidden">
+            {{blog.title}}
+          </textarea>
+          <textarea class="form-control my-2" id="blog-{{blog.id}}" style="height: 100px; overflow: auto;">
+            {{post.contents}}
+          </textarea> 
+        </div>
+        
+        <div class="col-md-8 text-center my-2 d-grid gap-2">
+          <button id="update-btn" class="btn btn-post text-light" data-id="{{post.id}}">UPDATE POST</button>
+        </div>
+        <div class="col-md-8 text-center d-grid gap-2">
+          <button id="del-btn" class="btn btn-secondary" data-id="{{post.id}}">DELETE POST</button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+</div>
+
+<script src="./js/profile.js"></script>

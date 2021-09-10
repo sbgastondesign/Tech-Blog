@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Random regex",
+    "contents": "Just some random post about regex."
+  },
+  {
+    "title": "The Ultimate Tech Quiz",
+    "contents": "A web app that will test your coding abilities."
+  },
+  {
+    "title": "Interview Time",
+    "contents": "What it takes to get the job."
+  },
+  {
+    "title": "Heroku",
+    "contents": "How many repos does it take to deploy correctly? All the repos there ever was and ever will be."
+  },
+  {
+    "title": "Code and Caffeine",
+    "contents": "What gets you through the day and night and day again."
+  },
+  {
+    "title": "Swan Song",
+    "contents": "The best code there ever was until it wasn't."
+  }
+]

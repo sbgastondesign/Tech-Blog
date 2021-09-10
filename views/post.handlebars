@@ -1,0 +1,40 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+</div>
+<div class="bg-light p-2 blog-contents mt-0">
+  <p>{{contents}}</p>
+</div>
+<div class="text-end px-2 text-light blog-footer mb-0">
+  <p>Posted by: {{user.name}} on {{format_date date_created}}</p>
+</div>
+
+
+{{#if comments.length}}
+<h3>Post Comments</h3>
+<div class="col-md-6 comments">
+  {{#each comments as |comment|}}
+    <div class="border-comment mb-1">
+      <p class="p-comment p-2">{{comment.comment}}</p>
+      <div class="comment-footer text-light text-end">
+        <p class="mb-0 px-2">Commented by: {{comment.user.name}} on {{format_date comment.date_created}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{/if}}
+
+
+{{#if logged_in}}
+  <h4>Leave a comment</h4>
+  <div class="form comment-contents p-2">
+    <textarea class="form-control my-2 new-comment" style="height: 100px;">     
+    </textarea>
+    <div class="text-end">
+      <button class="btn btn-comment text-light" data-id="{{id}}">Save Comment</button>
+    </div>
+  </div>
+{{else}}
+  <h4 class="text-center mt-5">Login or Sign-up to leave a comment!</h4>
+{{/if}}
+
+<script src="../js/comment.js"></script>

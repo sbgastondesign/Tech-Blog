@@ -4,9 +4,9 @@
   "description": "CMS-style blog site that can publish articles and blog posts",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "express-handlebars": "^5.2.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.1"
+    "sequelize": "^6.6.5",
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "jest": "^26.6.3"

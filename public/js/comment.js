@@ -1,30 +1,28 @@
-async function commentFormHandler(event) {
+
+const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+    const comment = document.querySelector('.new-comment').value.trim();
+    const blog_id = document.querySelector('.btn-comment').getAttribute('data-id');
 
-    const post_id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
-
-    if (comment_text) {
-        const response = await fetch('/api/comments', {
+    console.log(event.target.getAttribute('data-id'));
+    if (comment) {
+        const response = await fetch(`/api/comments`, {
             method: 'POST',
-            body: JSON.stringify({
-                post_id,
-                comment_text
-            }),
+            body: JSON.stringify({ comment, post_id }),
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         });
 
         if (response.ok) {
-            document.location.reload();
+            document.location.replace(`/post/${post_id}`);
         } else {
-            alert(response.statusText);
+            alert('Failed to create a new comment');
         }
     }
-}
+};
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+document
+    .querySelector('.btn-comment')
+    .addEventListener('click', newFormHandler);
